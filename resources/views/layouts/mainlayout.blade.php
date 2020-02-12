@@ -83,10 +83,10 @@
                         <!-- ============================================================== -->
                         <!-- Search -->
                         <!-- ============================================================== -->
-                        <li class="nav-item hidden-xs-down search-box"> <a class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-search"></i></a>
+                        <!-- <li class="nav-item hidden-xs-down search-box"> <a class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-search"></i></a>
                             <form class="app-search">
                                 <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="fa fa-times"></i></a></form>
-                        </li>
+                        </li> -->
                     </ul>
                     <!-- ============================================================== -->
                     <!-- User profile and search -->
@@ -121,14 +121,21 @@
                           </a>
                         </li>
                         <li>
-                          <a class="waves-effect waves-dark" href="{{ route('forminputpetani') }}" aria-expanded="false">
-                            <i class="fa fa-user"></i>
-                            <span class="hide-menu">Input Akun Petani</span>
-                          </a>
+                            <a class="waves-effect waves-dark" href="{{ route('forminputpetani') }}" aria-expanded="false">
+                                <i class="fa fa-user"></i>
+                                <span class="hide-menu">Input Akun Petani</span>
+                            </a>
                         </li>
-                        <li> <a class="waves-effect waves-dark" href="pages-profile.html" aria-expanded="false"><i class="fa fa-user-circle-o"></i><span class="hide-menu">Profile</span></a>
+                        <li>
+                            <a class="waves-effect waves-dark" href="{{ route('showRDKK')}}" aria-expanded="false">
+                                <i class="fa fa-table"></i>
+                                <span class="hide-menu">Data RDKK</span>
+                            </a>
                         </li>
-                        <li> <a class="waves-effect waves-dark" href="table-basic.html" aria-expanded="false"><i class="fa fa-table"></i><span class="hide-menu">Tables</span></a>
+                        <li>
+                            <a class="waves-effect waves-dark" href="{{ route('showRUT') }}" aria-expanded="false">
+                                <i class="fa fa-table"></i><span class="hide-menu">Data RUT</span>
+                            </a>
                         </li>
                         <li> <a class="waves-effect waves-dark" href="icon-fontawesome.html" aria-expanded="false"><i class="fa fa-smile-o"></i><span class="hide-menu">Icons</span></a>
                         </li>
@@ -175,6 +182,17 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
+    <script type="text/javascript" language="javascript">
+        function konfirmasi () {
+            var pilihan = confirm ("Apakah Anda Yakin Menghapus Data ?");
+            if(pilihan){
+                return true
+                }else{
+                alert ("Proses Di Batalkan")
+                return false
+                }
+        }
+    </script>
     <script src="{{ url('assets/node_modules/jquery/jquery.min.js')}}"></script>
     <!-- Bootstrap popper Core JavaScript -->
     <script src="{{ url('assets/node_modules/bootstrap/js/popper.min.js')}}"></script>

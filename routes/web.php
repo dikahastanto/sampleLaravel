@@ -22,5 +22,16 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/forminput', function () {
         return view('admin.inputpetani');
     })->name('forminputpetani');
+    Route::post('/insertpetani', 'PetaniController@store')->name('insertPetani');
+    // rut
+    Route::get('/datarut', 'RUTController@index')->name('showRUT');
 
+    // rdkk
+    Route::get('/datardkk', 'RDKKController@index')->name('showRDKK');
+    Route::get('/formInputRDKK', 'RDKKController@create')->name('formInputRDKK');
+    Route::post('/inputrdkk', 'RDKKController@store')->name('inputRDKK');
+    Route::get('/formeditrdkk/{id}', 'RDKKController@show')->name('formEditRDKK');
+    Route::post('/updateRDKK/{id}', 'RDKKController@update')->name('updateRDKK');
+    Route::get('/deleterdkk/{id}', 'RDKKController@destroy')->name('deleteRDKK');
 });
+

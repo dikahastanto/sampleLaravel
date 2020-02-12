@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Petani;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 class PetaniController extends Controller
 {
     /**
@@ -34,7 +36,61 @@ class PetaniController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $password = $pas = Hash::make($request->password);
+        $data = $request->all();
+        $data['password'] = $password;
+        // var_dump($password);
+
+        $input = Petani::create($data);
+        $respon = array();
+        if ($input) {
+            $respon = [
+                'afterInput' => true,
+                'sukses' => true,
+                'msg' => 'Berhasil Input Data Petani'
+            ];
+        } else {
+            $respon = [
+                'afterInput' => true,
+                'sukses' => false,
+                'msg' => 'Gagal Input Data Petani'
+            ];
+        }
+        return redirect()->route('forminputpetani')->with($respon);
+    }
+
+    public function login (Request $request) {
+        $nik = $request->nik;
+        $password = $request->password;
+
+        $response = null;
+        $user = Petani::where('nik', $nik)->first();
+
+        if ($user) {
+            if (Hash::check($password, $user->password)) {
+                $apiToken = base64_encode(Str::random(40));
+                $user->update([
+                    'token' => $apiToken
+                ]);
+                $response = [
+                    'sukses' => true,
+                    'msg' => 'Berhasil Login',
+                    'user' => $user,
+                    'token' => $apiToken
+                ];
+            } else {
+                $response = [
+                    'sukses' => false,
+                    'msg' => 'Password Salah'
+                ];
+            }
+        } else {
+            $response = [
+                'sukses' => false,
+                'msg' => 'NIK Tidak Terdaftar'
+            ];
+        }
+        return $response;
     }
 
     /**
