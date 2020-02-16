@@ -20,3 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('/loginpetani', 'PetaniController@login');
 Route::post('/inputrut', 'RUTController@store');
+Route::get('/datarut/{nik}', 'RUTController@show');
+Route::get('/datardkk/{nik}', 'RDKKController@showApi');

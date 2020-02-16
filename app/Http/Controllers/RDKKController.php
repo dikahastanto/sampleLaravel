@@ -67,6 +67,26 @@ class RDKKController extends Controller
         return view('admin.formeditRDKK')->with(['data' => $data]);
     }
 
+    public function showApi ($nik) {
+        $data = RDKK::where('nik', $nik)->first();
+
+        $respon;
+        if ($data) {
+            $respon = [
+                'sukses' => true,
+                'msg' => 'Berhasil Mendapatkan Data',
+                'result' => $data
+            ];
+        } else {
+            $respon = [
+                'sukses' => false,
+                'msg' => 'Anda Belum Mempunyai RDKK',
+                'result' => null
+            ];
+        }
+        return $respon;
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

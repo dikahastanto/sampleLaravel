@@ -57,9 +57,24 @@ class RUTController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($nik)
     {
-        //
+        $data = RUT::where('nik', $nik)->first();
+        $respon;
+        if ($data) {
+            $respon = [
+                'sukses' => true,
+                'msg' => 'Berhasil Mendapatkan Data',
+                'result' => $data
+            ];
+        } else {
+            $respon = [
+                'sukses' => false,
+                'msg' => 'Anda Belum Mengisi RUT',
+                'result' => null
+            ];
+        }
+        return $respon;
     }
 
     /**
