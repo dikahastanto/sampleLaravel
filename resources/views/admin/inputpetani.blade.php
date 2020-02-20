@@ -47,19 +47,19 @@
                         <div class="form-group">
                             <label class="col-md-12">Luas Lahan Masa Tanam 1</label>
                             <div class="col-md-12">
-                                <input required type="number" name="lt_mt_1" placeholder="Luas Lahan Masa Tanam 1" class="form-control form-control-line">
+                                <input required type="text" name="lt_mt_1" placeholder="Luas Lahan Masa Tanam 1" class="form-control form-control-line">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-12">Luas Lahan Masa Tanam 2</label>
                             <div class="col-md-12">
-                                <input required type="number" name="lt_mt_2" placeholder="Luas Lahan Masa Tanam 1" class="form-control form-control-line">
+                                <input required type="text" name="lt_mt_2" placeholder="Luas Lahan Masa Tanam 1" class="form-control form-control-line">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-12">Luas Lahan Masa Tanam 3</label>
                             <div class="col-md-12">
-                                <input required type="number" name="lt_mt_3" placeholder="Luas Lahan Masa Tanam 1" class="form-control form-control-line">
+                                <input required type="text" name="lt_mt_3" placeholder="Luas Lahan Masa Tanam 1" class="form-control form-control-line">
                             </div>
                         </div>
                         <div class="form-group">
