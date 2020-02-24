@@ -115,10 +115,16 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li>
-                          <a class="waves-effect waves-dark" href="{{ route('home') }}" aria-expanded="false">
-                            <i class="fa fa-tachometer"></i>
-                            <span class="hide-menu">Dashboard</span>
-                          </a>
+                            <a class="waves-effect waves-dark" href="{{ route('home') }}" aria-expanded="false">
+                                <i class="fa fa-tachometer"></i>
+                                <span class="hide-menu">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="waves-effect waves-dark" href="{{ route('forecastingPanen') }}" aria-expanded="false">
+                                <i class="fa fa-tachometer"></i>
+                                <span class="hide-menu">Forecasting Panen</span>
+                            </a>
                         </li>
                         <li>
                             <a class="waves-effect waves-dark" href="{{ route('forminputpetani') }}" aria-expanded="false">

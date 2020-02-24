@@ -33,5 +33,9 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/formeditrdkk/{id}', 'RDKKController@show')->name('formEditRDKK');
     Route::post('/updateRDKK/{id}', 'RDKKController@update')->name('updateRDKK');
     Route::get('/deleterdkk/{id}', 'RDKKController@destroy')->name('deleteRDKK');
+
+    // forcasting
+    Route::get('/forecastingpanen', 'ForecastingController@panen')->name('forecastingPanen');
+    
 });
 
